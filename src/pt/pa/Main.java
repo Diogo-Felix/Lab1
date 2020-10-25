@@ -16,8 +16,12 @@ public class Main {
         queue.enqueue(2);
 
 
+        queue.clear();
+
+        System.out.println("Front: " + queue.front());
         //queue.show();
 
+        /*
         for(int i = 0; i < 4; i++) {
             try {
                 System.out.println("elemento: " + queue.dequeue());
@@ -27,6 +31,8 @@ public class Main {
             }
 
         }
+        */
+
         //TODO: testar implementação
 
     }

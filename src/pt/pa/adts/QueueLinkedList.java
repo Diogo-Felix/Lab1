@@ -61,12 +61,16 @@ public class QueueLinkedList<T> implements Queue<T> {
 
     @Override
     public T front() {
-        return header.element;
+        try{
+            return header.element;
+        }catch(NullPointerException e){
+            return null;
+        }
     }
 
     @Override
     public int size() {
-        return 0;
+        return this.size;
     }
 
     @Override
@@ -76,7 +80,13 @@ public class QueueLinkedList<T> implements Queue<T> {
 
     @Override
     public void clear() {
-
+        while(!isEmpty()){
+            try{
+                dequeue();
+            } catch(QueueErrors e){
+                System.out.println(e.getMessage());
+            }
+        }
     }
 
     @Override
